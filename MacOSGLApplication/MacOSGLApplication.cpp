@@ -74,7 +74,7 @@ namespace T3D
 //		}
         
         //SO USE THIS INSTEAD
-        window = SDL_CreateWindow("T3D Graphics Engine - MacOS", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+        window = SDL_CreateWindow("T3D Graphics Engine - MacOS", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_OPENGL);
         SDL_GL_CreateContext(window);
         
         //glewInit();
@@ -93,6 +93,7 @@ namespace T3D
 		//SDL_WM_GrabInput(SDL_GRAB_ON);
 
         //SDL_SetWindowGrab(window, SDL_TRUE);
+        SDL_SetRelativeMouseMode(SDL_TRUE);
 		SDL_ShowCursor(SDL_DISABLE);
 
 		//std::cout<<glGetString(GL_VERSION)<<"\n";
