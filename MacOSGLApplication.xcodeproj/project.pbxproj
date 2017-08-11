@@ -11,6 +11,8 @@
 		9249B38A1F3AE7D0004E9720 /* Pyramid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3851F3AE7D0004E9720 /* Pyramid.cpp */; };
 		9249B38B1F3AE7D0004E9720 /* TCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3871F3AE7D0004E9720 /* TCube.cpp */; };
 		9249B38E1F3AE7D7004E9720 /* Tutorial4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B38C1F3AE7D7004E9720 /* Tutorial4.cpp */; };
+		9249B3921F3AE84B004E9720 /* Assignment2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3901F3AE84B004E9720 /* Assignment2.cpp */; };
+		9249B3951F3AECA8004E9720 /* ADPlane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3931F3AECA8004E9720 /* ADPlane.cpp */; };
 		9260ACFC1F31B00B003F0C29 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9260AC901F31B00A003F0C29 /* Animation.cpp */; };
 		9260ACFD1F31B00B003F0C29 /* Billboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9260AC921F31B00A003F0C29 /* Billboard.cpp */; };
 		9260ACFE1F31B00B003F0C29 /* Bone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9260AC941F31B00A003F0C29 /* Bone.cpp */; };
@@ -87,6 +89,10 @@
 		9249B3881F3AE7D0004E9720 /* TCube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TCube.hpp; sourceTree = "<group>"; };
 		9249B38C1F3AE7D7004E9720 /* Tutorial4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tutorial4.cpp; sourceTree = "<group>"; };
 		9249B38D1F3AE7D7004E9720 /* Tutorial4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tutorial4.hpp; sourceTree = "<group>"; };
+		9249B3901F3AE84B004E9720 /* Assignment2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Assignment2.cpp; sourceTree = "<group>"; };
+		9249B3911F3AE84B004E9720 /* Assignment2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Assignment2.hpp; sourceTree = "<group>"; };
+		9249B3931F3AECA8004E9720 /* ADPlane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ADPlane.cpp; sourceTree = "<group>"; };
+		9249B3941F3AECA8004E9720 /* ADPlane.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ADPlane.hpp; sourceTree = "<group>"; };
 		9260AC861F31AFE7003F0C29 /* MacOSGLApplication */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOSGLApplication; sourceTree = BUILT_PRODUCTS_DIR; };
 		9260AC901F31B00A003F0C29 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		9260AC911F31B00A003F0C29 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
@@ -221,6 +227,17 @@
 			name = Tutorial4;
 			sourceTree = "<group>";
 		};
+		9249B38F1F3AE804004E9720 /* Assignment2 */ = {
+			isa = PBXGroup;
+			children = (
+				9249B3901F3AE84B004E9720 /* Assignment2.cpp */,
+				9249B3911F3AE84B004E9720 /* Assignment2.hpp */,
+				9249B3931F3AECA8004E9720 /* ADPlane.cpp */,
+				9249B3941F3AECA8004E9720 /* ADPlane.hpp */,
+			);
+			name = Assignment2;
+			sourceTree = "<group>";
+		};
 		9260AC7D1F31AFE7003F0C29 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +259,7 @@
 		9260AC881F31AFE7003F0C29 /* MacOSGLApplication */ = {
 			isa = PBXGroup;
 			children = (
+				9249B38F1F3AE804004E9720 /* Assignment2 */,
 				9249B3821F3AE7B7004E9720 /* Tutorial4 */,
 				9260ACB81F31B00A003F0C29 /* Main.cpp */,
 				9260AD451F31BC0B003F0C29 /* Application */,
@@ -477,6 +495,7 @@
 				9260AD2F1F31B00B003F0C29 /* MacOSGLApplication.cpp in Sources */,
 				9260AD031F31B00B003F0C29 /* DiagMessageTask.cpp in Sources */,
 				9260AD151F31B00B003F0C29 /* Mesh.cpp in Sources */,
+				9249B3921F3AE84B004E9720 /* Assignment2.cpp in Sources */,
 				9260AD111F31B00B003F0C29 /* Material.cpp in Sources */,
 				9260AD0C1F31B00B003F0C29 /* Input.cpp in Sources */,
 				9260AD011F31B00B003F0C29 /* Component.cpp in Sources */,
@@ -492,6 +511,7 @@
 				9260AD021F31B00B003F0C29 /* Cube.cpp in Sources */,
 				9260AD2D1F31B00B003F0C29 /* Transform.cpp in Sources */,
 				9249B38B1F3AE7D0004E9720 /* TCube.cpp in Sources */,
+				9249B3951F3AECA8004E9720 /* ADPlane.cpp in Sources */,
 				9260AD2B1F31B00B003F0C29 /* TerrainFollower.cpp in Sources */,
 				9260AD2E1F31B00B003F0C29 /* Tutorial1.cpp in Sources */,
 				9260AD0E1F31B00B003F0C29 /* Light.cpp in Sources */,

@@ -1,7 +1,7 @@
 #ifndef PLANEMESH_H
 #define PLANEMESH_H
 
-#include "mesh.h"
+#include "Mesh.h"
 
 namespace T3D{
 	class PlaneMesh :
