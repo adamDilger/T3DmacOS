@@ -124,10 +124,10 @@ namespace T3D {
         GameObject *prop = new GameObject(this);
         prop->setMesh(
                       new Propeller(
-                                3,		// the outer radius of the propeller
-                                1,      // the radius of the propeller hub
-                                1,		// the z-thickness of the hub and blades
-                                0,      // the twist applied to the top hub vertices
+                                2.5,		// the outer radius of the propeller
+                                0.5f,      // the radius of the propeller hub
+                                0.3f,		// the z-thickness of the hub and blades
+                                Math::DEG2RAD *  20,      // the twist applied to the top hub vertices
                                 7, 		// the number of blades
                                 21));
                       

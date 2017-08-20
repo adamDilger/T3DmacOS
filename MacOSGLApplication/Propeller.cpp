@@ -32,7 +32,7 @@ namespace T3D
         
         // Set vertices for cylinder
         for (int i = 0; i < density; i++) {
-            float theta = i * (Math::TWO_PI / density);
+            float theta = i * (Math::TWO_PI / density) + attackAngle;
             
             float x = hubRadius * cos(theta);
             float z = hubRadius * sin(theta);
@@ -43,7 +43,7 @@ namespace T3D
             
             
             //rotate for bottom verticies
-            theta = i * (Math::TWO_PI / density);// + Math::HALF_PI/5;
+            theta = i * (Math::TWO_PI / density);
             
             x = hubRadius * cos(theta);
             z = hubRadius * sin(theta);
@@ -107,52 +107,76 @@ namespace T3D
         //set vertex for propellor
         for (int prop = 0; prop < blades; prop++) {
             float theta = (prop * (density/blades)) * (Math::TWO_PI / density);
+            float theta_2 = ((prop * (density/blades)) + 1) * (Math::TWO_PI / density);
+            float midTheta = theta + ((theta_2 - theta) / 2);
+            
+            float outer_radius = radius - hubRadius;
+            float propX = outer_radius * cos(midTheta);
+            float propZ = outer_radius * sin(midTheta);
+            
+            float propX_top = outer_radius * cos(midTheta);
+            float propZ_top = outer_radius * sin(midTheta);
+            
+//            printf("PROPELLOR: [%d], theta: [%f], theta_2: [%f], midTheta: [%f]\n",
+//                   prop, theta, theta_2, midTheta);
             
             int tmpV = verticies;
             
-            float x = hubRadius * cos(theta);
-            float z = hubRadius * sin(theta);
+            float x = hubRadius * cos(theta + attackAngle);
+            float z = hubRadius * sin(theta + attackAngle);
             float y = height/2;
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
+            
+            x = hubRadius * cos(theta);
+            z = hubRadius * sin(theta);
+            
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
             
             //extend radius
             
-            x = radius * cos(theta);
-            z = radius * sin(theta);
-            y = height/2;
+            x = hubRadius * cos(theta + attackAngle) + propX_top;
+            z = hubRadius * sin(theta + attackAngle) + propZ_top;
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
+            
+            x = hubRadius * cos(theta) + propX;
+            z = hubRadius * sin(theta) + propZ;
+            
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
             
             //change theta to be set at the other side of the prop
-            theta = ((prop * (density/blades)) + 1) * (Math::TWO_PI / density);
             
-            x = hubRadius * cos(theta);
-            z = hubRadius * sin(theta);
-            y = height/2;
+            x = hubRadius * cos(theta_2 + attackAngle);
+            z = hubRadius * sin(theta_2 + attackAngle);
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
+            
+            x = hubRadius * cos(theta_2);
+            z = hubRadius * sin(theta_2);
+            
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
             
             //extend radius with changed theta
             
-            x = radius * cos(theta);
-            z = radius * sin(theta);
-            y = height/2;
+            x = hubRadius * cos(theta_2 + attackAngle) + propX_top;
+            z = hubRadius * sin(theta_2 + attackAngle) + propZ_top;
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
+            
+            x = hubRadius * cos(theta_2) + propX;
+            z = hubRadius * sin(theta_2) + propZ;
+            
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
             setVertex(verticies++, x, -y, z);
