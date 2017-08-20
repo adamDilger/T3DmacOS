@@ -17,6 +17,7 @@
 #include "Material.h"
 #include "SweepPath.h"
 #include "Sweep.h"
+#include "Propeller.hpp"
 
 namespace T3D {
     
@@ -68,35 +69,71 @@ namespace T3D {
         plane->getTransform()->setParent(root);
         plane->getTransform()->setLocalPosition(Vector3(0,0,0));
         
-        //Create a torus using the Sweep class as a child of rotateOrigin
-        SweepPath sp;
+//        //Create a torus using the Sweep class as a child of rotateOrigin
+//        SweepPath sp;
+//        sp.makeCirclePath(0, 30);
+//        GameObject *torus = new GameObject(this);
+//        
+//        vector<Vector3> points;
+//        points.push_back(Vector3(   0,      0.0f,   0.0f));
+//        points.push_back(Vector3(   0.3f,   0.0f,   0.0f));
+//        points.push_back(Vector3(   0.35f,  0.05f,  0.0f));
+//        points.push_back(Vector3(   0.6f,   0.2f,   0.0f));
+//        points.push_back(Vector3(   0.75f,  0.4f,   0.0f));
+//        points.push_back(Vector3(   0.85f,  0.6f,   0.0f));
+//        points.push_back(Vector3(   0.9f,   1.0f,   0.0f));
+//        points.push_back(Vector3(   0.85f,   1.0f,   0.0f));
+//        points.push_back(Vector3(   0.8f,  0.6f,   0.0f)); 
+//        points.push_back(Vector3(   0.7f,  0.4f,   0.0f));
+//        points.push_back(Vector3(   0.5f,   0.2f,   0.0f));
+//        points.push_back(Vector3(   0.15f,  0.1f,   0.0f));
+//
+//        torus->setMesh(new Sweep(points,sp,true));
+//        torus->setMaterial(white);
+//        torus->getTransform()->setLocalPosition(Vector3(0,1,0));
+//        torus->getTransform()->setParent(root);
+//        torus->getTransform()->name = "Torus";
+//        
+//        SweepPath sp1;
+//        sp1.addPoint(Vector3(   0.85f,  0.75f,   0.0f), Quaternion(0,0,   Math::HALF_PI));
+//        sp1.addPoint(Vector3(   1.0f,  0.85f,   0.0f),  Quaternion(0,0,  Math::HALF_PI));
+//        sp1.addPoint(Vector3(   1.2f,  0.75f,   0.0f),  Quaternion(0,0,  Math::HALF_PI - Math::HALF_PI/2));
+//        sp1.addPoint(Vector3(   1.15f,  0.35f,   0.0f), Quaternion(0,0, -Math::HALF_PI/2));
+//        sp1.addPoint(Vector3(   0.9f,  0.2f,   0.0f),   Quaternion(0,0, -Math::HALF_PI));
+//        sp1.addPoint(Vector3(   0.7f,  0.35f,   0.0f),  Quaternion(0,0, -Math::HALF_PI - Math::HALF_PI/2));
+//
+//        GameObject *handle = new GameObject(this);
+//        
+//        vector<Vector3> points1;
+//        points1.push_back(Vector3(   0.0f,   0.0f,   0.1f));
+//        points1.push_back(Vector3(   -0.03f,   0.0f,   0.07f));
+//        points1.push_back(Vector3(   -0.05f,   0.0f,   0.0f));
+//        points1.push_back(Vector3(   -0.03f,   0.0f,  -0.07f));
+//        points1.push_back(Vector3(   0.0f,   0.0f,  -0.1f));
+//        points1.push_back(Vector3(   0.03f,  0.0f,  -0.07f));
+//        points1.push_back(Vector3(   0.05f,  0.0f,   0.0f));
+//        points1.push_back(Vector3(   0.03f,  0.0f,   0.07f));
+//        
+//        
+//        handle->setMesh(new Sweep(points1,sp1,true));
+//        handle->setMaterial(white);
+//        handle->getTransform()->setLocalPosition(Vector3(0,0,0));
+//        handle->getTransform()->setParent(torus->getTransform());
+//        handle->getTransform()->name = "Handle";
         
-        for (int i=0; i<32; i++){
-            Transform t;
-            float angle = Math::TWO_PI*i/8;
-            t.setLocalPosition(Vector3(cosf(angle),i 	/ 8.0,sinf(angle)));
-            
-            //TODO check that this is correct
-            t.setLocalRotation(*new Quaternion(Vector3(0,-angle,0)));
-            sp.addTransform(t);
-        }
-        
-        GameObject *torus = new GameObject(this);
-        vector<Vector3> points;
-        points.push_back(Vector3(   0.2f,   0.0f,   0.0f));
-        points.push_back(Vector3(   0.14f,  0.14f,  0.0f));
-        points.push_back(Vector3(   0.0f,   0.2f,   0.0f));
-        points.push_back(Vector3(   -0.14f, 0.14f,  0.0f));
-        points.push_back(Vector3(   -0.2f,  0.0f,   0.0f));
-        points.push_back(Vector3(   -0.14f, -0.14f, 0.0f));
-        points.push_back(Vector3(   0.0f,   -0.2f,  0.0f));
-        points.push_back(Vector3(   0.14f,  -0.14f, 0.0f));
-        torus->setMesh(new Sweep(points,sp,true));
-        torus->setMaterial(blue);
-        torus->getTransform()->setLocalPosition(Vector3(0,1,0));
-        torus->getTransform()->setParent(root);
-        torus->getTransform()->name = "Torus";
-        
+        GameObject *prop = new GameObject(this);
+        prop->setMesh(
+                      new Propeller(
+                                3,		// the outer radius of the propeller
+                                1,      // the radius of the propeller hub
+                                1,		// the z-thickness of the hub and blades
+                                0,      // the twist applied to the top hub vertices
+                                7, 		// the number of blades
+                                21));
+                      
+        prop->getTransform()->setParent(root);
+        prop->setMaterial(blue);
+        prop->getTransform()->setLocalPosition(Vector3(0, 2, 0));
         
         //camObj->addComponent(new LookAtBehaviour(torus->getTransform()));
         

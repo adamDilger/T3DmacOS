@@ -36,10 +36,10 @@ namespace T3D
 		ambient[2] = 0.1f;
 		ambient[3] = 1;
 
-		showWireframe = false;
-		showPoints = false;
+        showWireframe = false;
+		showPoints = true;
 		showGrid = false;
-		showAxes = false;
+		showAxes = true;
 	}
 
 	/*! Destructor

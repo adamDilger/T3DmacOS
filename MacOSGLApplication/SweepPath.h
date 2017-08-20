@@ -18,6 +18,7 @@ namespace T3D
 		int size(){ return path.size(); }
 
 		void makeCirclePath(float radius, int density);
+        void addPoint(Vector3 pos, Quaternion rot);
 
 	protected:
 		std::vector<Transform> path;

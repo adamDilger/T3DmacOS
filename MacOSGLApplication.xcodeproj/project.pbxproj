@@ -65,6 +65,7 @@
 		9260AD3E1F31B9B3003F0C29 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9260AD3D1F31B9B3003F0C29 /* SDL2.framework */; };
 		9260AD411F31BA23003F0C29 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9260AD3F1F31BA23003F0C29 /* SDL2_image.framework */; };
 		9260AD421F31BA23003F0C29 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9260AD401F31BA23003F0C29 /* SDL2_ttf.framework */; };
+		929053DD1F42867200F36733 /* Propeller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 929053DB1F42867200F36733 /* Propeller.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -195,6 +196,8 @@
 		9260AD3D1F31B9B3003F0C29 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		9260AD3F1F31BA23003F0C29 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
 		9260AD401F31BA23003F0C29 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		929053DB1F42867200F36733 /* Propeller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Propeller.cpp; sourceTree = "<group>"; };
+		929053DC1F42867200F36733 /* Propeller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Propeller.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				9249B3911F3AE84B004E9720 /* Assignment2.hpp */,
 				9249B3931F3AECA8004E9720 /* ADPlane.cpp */,
 				9249B3941F3AECA8004E9720 /* ADPlane.hpp */,
+				929053DB1F42867200F36733 /* Propeller.cpp */,
+				929053DC1F42867200F36733 /* Propeller.hpp */,
 			);
 			name = Assignment2;
 			sourceTree = "<group>";
@@ -510,6 +515,7 @@
 				9260AD0D1F31B00B003F0C29 /* KeyboardController.cpp in Sources */,
 				9260AD021F31B00B003F0C29 /* Cube.cpp in Sources */,
 				9260AD2D1F31B00B003F0C29 /* Transform.cpp in Sources */,
+				929053DD1F42867200F36733 /* Propeller.cpp in Sources */,
 				9249B38B1F3AE7D0004E9720 /* TCube.cpp in Sources */,
 				9249B3951F3AECA8004E9720 /* ADPlane.cpp in Sources */,
 				9260AD2B1F31B00B003F0C29 /* TerrainFollower.cpp in Sources */,

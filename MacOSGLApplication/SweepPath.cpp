@@ -27,10 +27,19 @@ namespace T3D{
 			float angle = Math::TWO_PI*i/density;
 			t.setLocalPosition(Vector3(radius*cosf(angle),0,radius*sinf(angle)));
 			
-            //TODO check that this is correct
+            //TODO check this change works properly
+            //t.setLocalRotation(Quaternion(Vector3(0,-angle,0)));
             t.setLocalRotation(*new Quaternion(Vector3(0,-angle,0)));
 			path.push_back(t);
 		}
 	}
+    
+    void SweepPath::addPoint(Vector3 pos, Quaternion rot) {
+        Transform t;
+        t.setLocalPosition(pos);
+        
+        t.setLocalRotation(rot);
+        path.push_back(t);
+    }
 
 }

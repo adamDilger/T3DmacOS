@@ -78,7 +78,7 @@ namespace T3D
         SDL_GL_CreateContext(window);
         
         //glewInit();
-		glClearColor(0, 0, 0, 0);
+		glClearColor(0.9, 0.9, 0.9, 1);
 		glClearDepth(1.0f);
 		glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
 
