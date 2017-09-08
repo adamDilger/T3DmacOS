@@ -46,7 +46,6 @@ namespace T3D {
         bobble->getTransform()->setLocalPosition(Vector3(0, -0.54, 0));
         bobble->getTransform()->name = "Bobble";
         
-        
         std::vector<Vector3> armProfile;
         armProfile.push_back(Vector3(0.35f,  0.0f, 0.0f));
         armProfile.push_back(Vector3(0.25f,  0.0f, -0.2f));
