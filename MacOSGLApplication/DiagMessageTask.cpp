@@ -82,7 +82,7 @@ namespace T3D {
 
 			removeOverlay();
 
-            const char *fontPath = "YOUR_RESOURCE_PATHFreeSans.ttf";
+            const char *fontPath = "/Users/adamdilger/Resources/FreeSans.ttf";
             
             font *f = app->getFont(fontPath, 16);
             

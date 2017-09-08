@@ -114,9 +114,6 @@ namespace T3D
             float propX = outer_radius * cos(midTheta);
             float propZ = outer_radius * sin(midTheta);
             
-            float propX_top = outer_radius * cos(midTheta);
-            float propZ_top = outer_radius * sin(midTheta);
-            
 //            printf("PROPELLOR: [%d], theta: [%f], theta_2: [%f], midTheta: [%f]\n",
 //                   prop, theta, theta_2, midTheta);
             
@@ -137,8 +134,8 @@ namespace T3D
             
             //extend radius
             
-            x = hubRadius * cos(theta + attackAngle) + propX_top;
-            z = hubRadius * sin(theta + attackAngle) + propZ_top;
+            x = hubRadius * cos(theta + attackAngle) + propX;
+            z = hubRadius * sin(theta + attackAngle) + propZ;
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);
@@ -167,8 +164,12 @@ namespace T3D
             
             //extend radius with changed theta
             
-            x = hubRadius * cos(theta_2 + attackAngle) + propX_top;
-            z = hubRadius * sin(theta_2 + attackAngle) + propZ_top;
+            float extraRadius = hubRadius * sin(theta_2-theta);
+            float newPropX = (outer_radius + extraRadius) * cos(midTheta);
+            float newPropZ = (outer_radius + extraRadius) * sin(midTheta);
+            
+            x = hubRadius * cos(theta_2 + attackAngle) + newPropX;
+            z = hubRadius * sin(theta_2 + attackAngle) + newPropZ;
             
             setVertex(verticies++, x, y, z);
             setVertex(verticies++, x, y, z);

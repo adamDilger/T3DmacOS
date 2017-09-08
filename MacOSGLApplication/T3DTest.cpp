@@ -85,7 +85,7 @@ namespace T3D{
 		Texture *texttex = new Texture(128,32);
 		texttex->clear(Colour(255,255,255,255));
 
-		font *f = getFont("YOUR_RESOURCE_PATHFreeSans.ttf", 24);
+		font *f = getFont("/Users/adamdilger/Resources/FreeSans.ttf", 24);
 		if (f != NULL) {
 			texttex->writeText(2, 0, "Hello", Colour(0,255,0,255), f->getFont());
 			texttex->writeText(64, 0, "World", Colour(255,0,0,0), f->getFont());

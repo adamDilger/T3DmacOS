@@ -37,7 +37,7 @@ namespace T3D
 		ambient[3] = 1;
 
         showWireframe = false;
-		showPoints = true;
+		showPoints = false;
 		showGrid = false;
 		showAxes = true;
 	}

@@ -60,7 +60,11 @@ namespace T3D
 				transform->setLocalPosition(Vector3::lerp(keyframes[frame-1].position,keyframes[frame].position,alpha));
 				
                 //TODO uncomment this
-                //transform->setLocalRotation(Quaternion::slerp(keyframes[frame-1].rotation,keyframes[frame].rotation,alpha));
+                Quaternion e = Quaternion::slerp(keyframes[frame-1].rotation,
+                                                  keyframes[frame].rotation,
+                                                  alpha);
+                
+                transform->setLocalRotation(e);
 			}
 		}
 	}

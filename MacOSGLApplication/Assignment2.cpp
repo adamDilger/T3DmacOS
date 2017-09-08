@@ -7,6 +7,7 @@
 //
 
 #include "Assignment2.hpp"
+#include "Animation.h"
 #include "ADPlane.hpp"
 #include "Cube.h"
 #include "KeyboardController.h"
@@ -18,6 +19,9 @@
 #include "SweepPath.h"
 #include "Sweep.h"
 #include "Propeller.hpp"
+#include "Lamp.hpp"
+#include "Stan.hpp"
+#include "StanController.hpp"
 
 namespace T3D {
     
@@ -37,7 +41,7 @@ namespace T3D {
         
         //MATERIALS
         Material *green = renderer->createMaterial(Renderer::PR_OPAQUE);
-        green->setDiffuse(0,1,0,1);
+        green->setDiffuse(0.5,1,0.5,1);
         Material *white = renderer->createMaterial(Renderer::PR_OPAQUE);
         white->setDiffuse(1, 1, 1, 1);
         Material *blue = renderer->createMaterial(Renderer::PR_OPAQUE);
@@ -51,7 +55,7 @@ namespace T3D {
         light->setDiffuse(1,1,1);
         light->setSpecular(1,1,1);
         lightObj->setLight(light);
-        lightObj->getTransform()->setLocalRotation(Vector3(-45*Math::DEG2RAD,70*Math::DEG2RAD,0));
+        lightObj->getTransform()->setLocalRotation(Vector3(0,45 *Math::DEG2RAD,0));
         lightObj->getTransform()->setParent(root);
         
         GameObject *camObj = new GameObject(this);
@@ -63,13 +67,13 @@ namespace T3D {
         camObj->getTransform()->setParent(root);
         camObj->addComponent(new KeyboardController());
         
-        GameObject *plane = new GameObject(this);
-        plane->setMesh(new ADPlane(15));
-        plane->setMaterial(green);
-        plane->getTransform()->setParent(root);
-        plane->getTransform()->setLocalPosition(Vector3(0,0,0));
-        
-//        //Create a torus using the Sweep class as a child of rotateOrigin
+//        GameObject *plane = new GameObject(this);
+//        plane->setMesh(new ADPlane(30));
+//        plane->setMaterial(green);
+//        plane->getTransform()->setParent(root);
+//        plane->getTransform()->setLocalPosition(Vector3(0,0,0));
+//
+////        //Create a torus using the Sweep class as a child of rotateOrigin
 //        SweepPath sp;
 //        sp.makeCirclePath(0, 30);
 //        GameObject *torus = new GameObject(this);
@@ -121,21 +125,75 @@ namespace T3D {
 //        handle->getTransform()->setParent(torus->getTransform());
 //        handle->getTransform()->name = "Handle";
         
-        GameObject *prop = new GameObject(this);
-        prop->setMesh(
-                      new Propeller(
-                                2.5,		// the outer radius of the propeller
-                                0.5f,      // the radius of the propeller hub
-                                0.3f,		// the z-thickness of the hub and blades
-                                Math::DEG2RAD *  20,      // the twist applied to the top hub vertices
-                                7, 		// the number of blades
-                                21));
-                      
-        prop->getTransform()->setParent(root);
-        prop->setMaterial(blue);
-        prop->getTransform()->setLocalPosition(Vector3(0, 2, 0));
+//        GameObject *prop = new GameObject(this);
+//        prop->setMesh(
+//                      new Propeller(
+//                                5,		// the outer radius of the propeller
+//                                1,      // the radius of the propeller hub
+//                                1,		// the z-thickness of the hub and blades
+//                                Math::DEG2RAD *  40,      // the twist applied to the top hub vertices
+//                                7, 		// the number of blades
+//                                21));
+//                      
+//        prop->getTransform()->setParent(root);
+//        prop->setMaterial(blue);
+//        prop->getTransform()->setLocalPosition(Vector3(0, 2, 0));
         
         //camObj->addComponent(new LookAtBehaviour(torus->getTransform()));
+        
+        Material *stanBrown = renderer->createMaterial(Renderer::PR_OPAQUE);
+        stanBrown->setDiffuse(201/255.0,119/255.0,107/255.0,  1);
+        
+        Material *stanSkin = renderer->createMaterial(Renderer::PR_OPAQUE);
+        stanSkin->setDiffuse(255/255.0,238/255.0,198/255.0,   1);
+
+        Material *stanRed = renderer->createMaterial(Renderer::PR_OPAQUE);
+        stanRed->setDiffuse(238/255.0, 48/255.0,76/255.0,   1);
+        
+        Material *stanBlue = renderer->createMaterial(Renderer::PR_OPAQUE);
+        stanBlue->setDiffuse(72/255.0, 116/255.0,183/255.0,   1);
+        
+        Material *stanBlack = renderer->createMaterial(Renderer::PR_OPAQUE);
+        stanBlack->setDiffuse(45/255.0, 45/255.0, 45/255.0,   1);
+        
+//        Lamp *lamp = new Lamp(this);
+//        lamp->setMaterial(grey);
+//        lamp->getTransform()->setLocalScale(Vector3(10, 10, 10));
+//        lamp->getTransform()->setLocalPosition(Vector3(0,0,0));
+//        lamp->getTransform()->setParent(root);
+//        
+//        lamp->base->setMaterial(grey);
+//        lamp->arm1->setMaterial(grey);
+//        lamp->arm2->setMaterial(grey);
+        
+        //Create some textured materials (using texture files)
+        Texture *smileytex = new Texture(getResourcePath("Stan.png"), true, true);
+        renderer->loadTexture(smileytex);
+        Material *smiley = renderer->createMaterial(Renderer::PR_OPAQUE);
+        smiley->setTexture(smileytex);
+        
+        Stan *stan = new Stan(this);
+        
+        stan->getTransform()->setLocalPosition(Vector3(0,0,0));
+        stan->getTransform()->setParent(root);
+        
+        stan->head->setMaterial(smiley);
+        stan->body->setMaterial(stanBrown);
+        stan->armL->setMaterial(stanBrown);
+        stan->shoulderL->setMaterial(stanBrown);
+        stan->handL->setMaterial(stanRed);
+        stan->armR->setMaterial(stanBrown);
+        stan->shoulderR->setMaterial(stanBrown);
+        stan->handR->setMaterial(stanRed);
+        stan->legL->setMaterial(stanBlue);
+        stan->legR->setMaterial(stanBlue);
+        stan->footL->setMaterial(stanBlack);
+        stan->footR->setMaterial(stanBlack);
+        stan->headBand->setMaterial(stanRed);
+        stan->beanie->setMaterial(stanBlue);
+        stan->bobble->setMaterial(stanRed);
+        
+        stan->addComponent(new StanController(stan));
         
         return true;
     }

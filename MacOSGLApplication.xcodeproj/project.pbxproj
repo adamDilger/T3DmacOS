@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920F24E01F6246810054488F /* Stan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 920F24DE1F6246810054488F /* Stan.cpp */; };
+		920F24E31F6277530054488F /* HemiSphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 920F24E11F6277530054488F /* HemiSphere.cpp */; };
+		921F144F1F4BD18D002B7774 /* Lamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921F144D1F4BD18D002B7774 /* Lamp.cpp */; };
+		9233C7841F62BBA700B47E47 /* StanController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233C7821F62BBA700B47E47 /* StanController.cpp */; };
 		9249B3891F3AE7D0004E9720 /* Cylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3831F3AE7D0004E9720 /* Cylinder.cpp */; };
 		9249B38A1F3AE7D0004E9720 /* Pyramid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3851F3AE7D0004E9720 /* Pyramid.cpp */; };
 		9249B38B1F3AE7D0004E9720 /* TCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3871F3AE7D0004E9720 /* TCube.cpp */; };
@@ -81,6 +85,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		920F24DE1F6246810054488F /* Stan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stan.cpp; sourceTree = "<group>"; };
+		920F24DF1F6246810054488F /* Stan.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Stan.hpp; sourceTree = "<group>"; };
+		920F24E11F6277530054488F /* HemiSphere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HemiSphere.cpp; sourceTree = "<group>"; };
+		920F24E21F6277530054488F /* HemiSphere.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HemiSphere.hpp; sourceTree = "<group>"; };
+		921F144D1F4BD18D002B7774 /* Lamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lamp.cpp; sourceTree = "<group>"; };
+		921F144E1F4BD18D002B7774 /* Lamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lamp.hpp; sourceTree = "<group>"; };
+		9233C7821F62BBA700B47E47 /* StanController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StanController.cpp; sourceTree = "<group>"; };
+		9233C7831F62BBA700B47E47 /* StanController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StanController.hpp; sourceTree = "<group>"; };
 		923C31CA1F31D09B0092647A /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = MacOSGLApplication/Resources; sourceTree = "<group>"; };
 		9249B3831F3AE7D0004E9720 /* Cylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cylinder.cpp; sourceTree = "<group>"; };
 		9249B3841F3AE7D0004E9720 /* Cylinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cylinder.hpp; sourceTree = "<group>"; };
@@ -215,6 +227,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921F144C1F4BD15E002B7774 /* Tutorial5 */ = {
+			isa = PBXGroup;
+			children = (
+				921F144D1F4BD18D002B7774 /* Lamp.cpp */,
+				921F144E1F4BD18D002B7774 /* Lamp.hpp */,
+				920F24DE1F6246810054488F /* Stan.cpp */,
+				920F24DF1F6246810054488F /* Stan.hpp */,
+				920F24E11F6277530054488F /* HemiSphere.cpp */,
+				920F24E21F6277530054488F /* HemiSphere.hpp */,
+			);
+			name = Tutorial5;
+			sourceTree = "<group>";
+		};
 		9249B3821F3AE7B7004E9720 /* Tutorial4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +289,7 @@
 		9260AC881F31AFE7003F0C29 /* MacOSGLApplication */ = {
 			isa = PBXGroup;
 			children = (
+				921F144C1F4BD15E002B7774 /* Tutorial5 */,
 				9249B38F1F3AE804004E9720 /* Assignment2 */,
 				9249B3821F3AE7B7004E9720 /* Tutorial4 */,
 				9260ACB81F31B00A003F0C29 /* Main.cpp */,
@@ -341,6 +367,8 @@
 				9260ACD41F31B00B003F0C29 /* RotateBehaviour.h */,
 				9260ACEF1F31B00B003F0C29 /* Terrain.h */,
 				9260ACF11F31B00B003F0C29 /* TerrainFollower.h */,
+				9233C7821F62BBA700B47E47 /* StanController.cpp */,
+				9233C7831F62BBA700B47E47 /* StanController.hpp */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -505,7 +533,9 @@
 				9260AD0C1F31B00B003F0C29 /* Input.cpp in Sources */,
 				9260AD011F31B00B003F0C29 /* Component.cpp in Sources */,
 				9260AD081F31B00B003F0C29 /* GLRenderer.cpp in Sources */,
+				920F24E01F6246810054488F /* Stan.cpp in Sources */,
 				9260AD0A1F31B00B003F0C29 /* GLTestApplication.cpp in Sources */,
+				9233C7841F62BBA700B47E47 /* StanController.cpp in Sources */,
 				9249B38E1F3AE7D7004E9720 /* Tutorial4.cpp in Sources */,
 				9260AD1F1F31B00B003F0C29 /* Shader.cpp in Sources */,
 				9260AD191F31B00B003F0C29 /* PerfLogTask.cpp in Sources */,
@@ -525,6 +555,7 @@
 				9260AD181F31B00B003F0C29 /* ParticleEmitter.cpp in Sources */,
 				9260AD141F31B00B003F0C29 /* Matrix4x4.cpp in Sources */,
 				9260AD261F31B00B003F0C29 /* SweepPath.cpp in Sources */,
+				920F24E31F6277530054488F /* HemiSphere.cpp in Sources */,
 				9260AD1E1F31B00B003F0C29 /* RotateBehaviour.cpp in Sources */,
 				9260AD121F31B00B003F0C29 /* Math.cpp in Sources */,
 				9260AD171F31B00B003F0C29 /* ParticleBehaviour.cpp in Sources */,
@@ -542,6 +573,7 @@
 				9260AD0B1F31B00B003F0C29 /* GLTestRenderer.cpp in Sources */,
 				9260AD1C1F31B00B003F0C29 /* Quaternion.cpp in Sources */,
 				9260AD241F31B00B003F0C29 /* Sphere.cpp in Sources */,
+				921F144F1F4BD18D002B7774 /* Lamp.cpp in Sources */,
 				9249B38A1F3AE7D0004E9720 /* Pyramid.cpp in Sources */,
 				9260AD001F31B00B003F0C29 /* Colour.cpp in Sources */,
 				9260ACFD1F31B00B003F0C29 /* Billboard.cpp in Sources */,
