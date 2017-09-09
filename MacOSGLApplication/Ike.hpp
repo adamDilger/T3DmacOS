@@ -1,5 +1,5 @@
 //
-//  Stan.hpp
+//  Ike.hpp
 //  MacOSGLApplication
 //
 //  Created by adam dilger on 8/9/17.
@@ -16,11 +16,11 @@
 
 namespace T3D {
     
-    class Stan : public GameObject
+    class Ike : public GameObject
     {
     public:
-        Stan(T3DApplication *app);
-        ~Stan(void);
+        Ike(T3DApplication *app);
+        ~Ike(void);
         
         Material *red;
         
@@ -35,7 +35,8 @@ namespace T3D {
         GameObject *shoulderLJoint;
         GameObject *shoulderRJoint;
         
-        
+        GameObject *crutchL;
+        GameObject *crutchR;
         
         GameObject *elbowLJoint;
         GameObject *elbowRJoint;

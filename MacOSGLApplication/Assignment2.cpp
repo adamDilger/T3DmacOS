@@ -21,7 +21,9 @@
 #include "Propeller.hpp"
 #include "Lamp.hpp"
 #include "Stan.hpp"
+#include "Ike.hpp"
 #include "StanController.hpp"
+#include "JimmyController.hpp"
 
 namespace T3D {
     
@@ -40,10 +42,10 @@ namespace T3D {
         
         
         //MATERIALS
-        Material *green = renderer->createMaterial(Renderer::PR_OPAQUE);
-        green->setDiffuse(0.5,1,0.5,1);
-        Material *white = renderer->createMaterial(Renderer::PR_OPAQUE);
-        white->setDiffuse(1, 1, 1, 1);
+        Material *yellow = renderer->createMaterial(Renderer::PR_OPAQUE);
+        yellow->setDiffuse(1,1,58/255.0,1);
+        Material *gray = renderer->createMaterial(Renderer::PR_OPAQUE);
+        gray->setDiffuse(.8, .8, .8, 1);
         Material *blue = renderer->createMaterial(Renderer::PR_OPAQUE);
         blue->setDiffuse(0.1,0.5,0.9,1);
         
@@ -167,13 +169,18 @@ namespace T3D {
 //        lamp->arm2->setMaterial(grey);
         
         //Create some textured materials (using texture files)
-        Texture *smileytex = new Texture(getResourcePath("Stan.png"), true, true);
+        Texture *smileytex = new Texture(getResourcePath("Stan.png"), false, true);
         renderer->loadTexture(smileytex);
         Material *smiley = renderer->createMaterial(Renderer::PR_OPAQUE);
         smiley->setTexture(smileytex);
         
-        Stan *stan = new Stan(this);
+        //Create some textured materials (using texture files)
+        Texture *jimtex = new Texture(getResourcePath("jimmy.png"), false, true);
+        renderer->loadTexture(jimtex);
+        Material *jimmy = renderer->createMaterial(Renderer::PR_OPAQUE);
+        jimmy->setTexture(jimtex);
         
+        Stan *stan = new Stan(this);
         stan->getTransform()->setLocalPosition(Vector3(0,0,0));
         stan->getTransform()->setParent(root);
         
@@ -192,8 +199,39 @@ namespace T3D {
         stan->headBand->setMaterial(stanRed);
         stan->beanie->setMaterial(stanBlue);
         stan->bobble->setMaterial(stanRed);
+        stan->wristL->setMaterial(stanBrown);
+        stan->wristR->setMaterial(stanBrown);
+        stan->elbowL->setMaterial(stanBrown);
+        stan->elbowR->setMaterial(stanBrown);
         
-        stan->addComponent(new StanController(stan));
+        Ike *ike = new Ike(this);
+        ike->getTransform()->setLocalPosition(Vector3(2,0,0));
+        ike->getTransform()->setParent(root);
+        
+        ike->head->setMaterial(jimmy);
+        ike->body->setMaterial(yellow);
+        ike->armL->setMaterial(yellow);
+        ike->shoulderL->setMaterial(yellow);
+        ike->handL->setMaterial(stanSkin);
+        ike->armR->setMaterial(yellow);
+        ike->shoulderR->setMaterial(yellow);
+        ike->handR->setMaterial(stanSkin);
+        ike->legL->setMaterial(stanBlue);
+        ike->legR->setMaterial(stanBlue);
+        ike->footL->setMaterial(stanBlack);
+        ike->footR->setMaterial(stanBlack);
+        ike->headBand->setMaterial(stanBlue);
+//        ike->beanie->setMaterial(stanSkin);
+//        ike->bobble->setMaterial(stanRed);
+        ike->wristL->setMaterial(yellow);
+        ike->wristR->setMaterial(yellow);
+        ike->elbowL->setMaterial(gray);
+        ike->elbowR->setMaterial(gray);
+        ike->crutchL->setMaterial(gray);
+        ike->crutchR->setMaterial(gray);
+        
+        
+        ike->addComponent(new JimmyController(ike));
         
         return true;
     }
