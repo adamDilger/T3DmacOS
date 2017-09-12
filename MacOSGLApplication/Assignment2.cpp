@@ -24,6 +24,7 @@
 #include "Ike.hpp"
 #include "StanController.hpp"
 #include "JimmyController.hpp"
+#include "Robot.hpp"
 
 namespace T3D {
     
@@ -74,8 +75,8 @@ namespace T3D {
 //        plane->setMaterial(green);
 //        plane->getTransform()->setParent(root);
 //        plane->getTransform()->setLocalPosition(Vector3(0,0,0));
-//
-////        //Create a torus using the Sweep class as a child of rotateOrigin
+
+//        //Create a torus using the Sweep class as a child of rotateOrigin
 //        SweepPath sp;
 //        sp.makeCirclePath(0, 30);
 //        GameObject *torus = new GameObject(this);
@@ -95,7 +96,7 @@ namespace T3D {
 //        points.push_back(Vector3(   0.15f,  0.1f,   0.0f));
 //
 //        torus->setMesh(new Sweep(points,sp,true));
-//        torus->setMaterial(white);
+//        torus->setMaterial(gray);
 //        torus->getTransform()->setLocalPosition(Vector3(0,1,0));
 //        torus->getTransform()->setParent(root);
 //        torus->getTransform()->name = "Torus";
@@ -122,7 +123,7 @@ namespace T3D {
 //        
 //        
 //        handle->setMesh(new Sweep(points1,sp1,true));
-//        handle->setMaterial(white);
+//        handle->setMaterial(gray);
 //        handle->getTransform()->setLocalPosition(Vector3(0,0,0));
 //        handle->getTransform()->setParent(torus->getTransform());
 //        handle->getTransform()->name = "Handle";
@@ -180,58 +181,74 @@ namespace T3D {
         Material *jimmy = renderer->createMaterial(Renderer::PR_OPAQUE);
         jimmy->setTexture(jimtex);
         
-        Stan *stan = new Stan(this);
-        stan->getTransform()->setLocalPosition(Vector3(0,0,0));
-        stan->getTransform()->setParent(root);
+//        Stan *stan = new Stan(this);
+//        stan->getTransform()->setLocalPosition(Vector3(8,0,0));
+//        stan->getTransform()->setParent(root);
+//        
+//        stan->head->setMaterial(smiley);
+//        stan->body->setMaterial(stanBrown);
+//        stan->armL->setMaterial(stanBrown);
+//        stan->shoulderL->setMaterial(stanBrown);
+//        stan->handL->setMaterial(stanRed);
+//        stan->armR->setMaterial(stanBrown);
+//        stan->shoulderR->setMaterial(stanBrown);
+//        stan->handR->setMaterial(stanRed);
+//        stan->legL->setMaterial(stanBlue);
+//        stan->legR->setMaterial(stanBlue);
+//        stan->footL->setMaterial(stanBlack);
+//        stan->footR->setMaterial(stanBlack);
+//        stan->headBand->setMaterial(stanRed);
+//        stan->beanie->setMaterial(stanBlue);
+//        stan->bobble->setMaterial(stanRed);
+//        stan->wristL->setMaterial(stanBrown);
+//        stan->wristR->setMaterial(stanBrown);
+//        stan->elbowL->setMaterial(stanBrown);
+//        stan->elbowR->setMaterial(stanBrown);
         
-        stan->head->setMaterial(smiley);
-        stan->body->setMaterial(stanBrown);
-        stan->armL->setMaterial(stanBrown);
-        stan->shoulderL->setMaterial(stanBrown);
-        stan->handL->setMaterial(stanRed);
-        stan->armR->setMaterial(stanBrown);
-        stan->shoulderR->setMaterial(stanBrown);
-        stan->handR->setMaterial(stanRed);
-        stan->legL->setMaterial(stanBlue);
-        stan->legR->setMaterial(stanBlue);
-        stan->footL->setMaterial(stanBlack);
-        stan->footR->setMaterial(stanBlack);
-        stan->headBand->setMaterial(stanRed);
-        stan->beanie->setMaterial(stanBlue);
-        stan->bobble->setMaterial(stanRed);
-        stan->wristL->setMaterial(stanBrown);
-        stan->wristR->setMaterial(stanBrown);
-        stan->elbowL->setMaterial(stanBrown);
-        stan->elbowR->setMaterial(stanBrown);
+//        Ike *ike = new Ike(this);
+//        ike->getTransform()->setLocalPosition(Vector3(2,0,0));
+//        ike->getTransform()->setParent(root);
+//        
+//        ike->head->setMaterial(jimmy);
+//        ike->body->setMaterial(yellow);
+//        ike->armL->setMaterial(yellow);
+//        ike->shoulderL->setMaterial(yellow);
+//        ike->handL->setMaterial(stanSkin);
+//        ike->armR->setMaterial(yellow);
+//        ike->shoulderR->setMaterial(yellow);
+//        ike->handR->setMaterial(stanSkin);
+//        ike->legL->setMaterial(stanBlue);
+//        ike->legR->setMaterial(stanBlue);
+//        ike->footL->setMaterial(stanBlack);
+//        ike->footR->setMaterial(stanBlack);
+//        ike->headBand->setMaterial(stanBlue);
+////        ike->beanie->setMaterial(stanSkin);
+////        ike->bobble->setMaterial(stanRed);
+//        ike->wristL->setMaterial(yellow);
+//        ike->wristR->setMaterial(yellow);
+//        ike->elbowL->setMaterial(gray);
+//        ike->elbowR->setMaterial(gray);
+//        ike->crutchL->setMaterial(gray);
+//        ike->crutchR->setMaterial(gray);
         
-        Ike *ike = new Ike(this);
-        ike->getTransform()->setLocalPosition(Vector3(2,0,0));
-        ike->getTransform()->setParent(root);
-        
-        ike->head->setMaterial(jimmy);
-        ike->body->setMaterial(yellow);
-        ike->armL->setMaterial(yellow);
-        ike->shoulderL->setMaterial(yellow);
-        ike->handL->setMaterial(stanSkin);
-        ike->armR->setMaterial(yellow);
-        ike->shoulderR->setMaterial(yellow);
-        ike->handR->setMaterial(stanSkin);
-        ike->legL->setMaterial(stanBlue);
-        ike->legR->setMaterial(stanBlue);
-        ike->footL->setMaterial(stanBlack);
-        ike->footR->setMaterial(stanBlack);
-        ike->headBand->setMaterial(stanBlue);
-//        ike->beanie->setMaterial(stanSkin);
-//        ike->bobble->setMaterial(stanRed);
-        ike->wristL->setMaterial(yellow);
-        ike->wristR->setMaterial(yellow);
-        ike->elbowL->setMaterial(gray);
-        ike->elbowR->setMaterial(gray);
-        ike->crutchL->setMaterial(gray);
-        ike->crutchR->setMaterial(gray);
+        Robot *robot = new Robot(this);
+        robot->getTransform()->setParent(root);
+        robot->getTransform()->setLocalPosition(Vector3(0,0,0));
+        robot->body->setMaterial(blue);
+        robot->legL->setMaterial(blue);
+        robot->legR->setMaterial(blue);
+        robot->kneeL->setMaterial(blue);
+        robot->kneeR->setMaterial(blue);
+        robot->shinL->setMaterial(blue);
+        robot->shinR->setMaterial(blue);
+        robot->shoulderL->setMaterial(blue);
+        robot->shoulderR->setMaterial(blue);
+        robot->armL->setMaterial(blue);
+        robot->armR->setMaterial(blue);
+        robot->head->setMaterial(blue);
         
         
-        ike->addComponent(new JimmyController(ike));
+        //ike->addComponent(new JimmyController(ike));
         
         return true;
     }

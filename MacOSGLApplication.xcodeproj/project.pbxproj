@@ -12,6 +12,7 @@
 		921F144F1F4BD18D002B7774 /* Lamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 921F144D1F4BD18D002B7774 /* Lamp.cpp */; };
 		9233C7841F62BBA700B47E47 /* StanController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233C7821F62BBA700B47E47 /* StanController.cpp */; };
 		9233C7871F62D6D300B47E47 /* Ike.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9233C7851F62D6D300B47E47 /* Ike.cpp */; };
+		924229E31F67719600BCFDC4 /* Robot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 924229E11F67719600BCFDC4 /* Robot.cpp */; };
 		9249B3891F3AE7D0004E9720 /* Cylinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3831F3AE7D0004E9720 /* Cylinder.cpp */; };
 		9249B38A1F3AE7D0004E9720 /* Pyramid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3851F3AE7D0004E9720 /* Pyramid.cpp */; };
 		9249B38B1F3AE7D0004E9720 /* TCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9249B3871F3AE7D0004E9720 /* TCube.cpp */; };
@@ -98,6 +99,8 @@
 		9233C7851F62D6D300B47E47 /* Ike.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ike.cpp; sourceTree = "<group>"; };
 		9233C7861F62D6D300B47E47 /* Ike.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ike.hpp; sourceTree = "<group>"; };
 		923C31CA1F31D09B0092647A /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = MacOSGLApplication/Resources; sourceTree = "<group>"; };
+		924229E11F67719600BCFDC4 /* Robot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Robot.cpp; sourceTree = "<group>"; };
+		924229E21F67719600BCFDC4 /* Robot.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Robot.hpp; sourceTree = "<group>"; };
 		9249B3831F3AE7D0004E9720 /* Cylinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cylinder.cpp; sourceTree = "<group>"; };
 		9249B3841F3AE7D0004E9720 /* Cylinder.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cylinder.hpp; sourceTree = "<group>"; };
 		9249B3851F3AE7D0004E9720 /* Pyramid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pyramid.cpp; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				9249B3941F3AECA8004E9720 /* ADPlane.hpp */,
 				929053DB1F42867200F36733 /* Propeller.cpp */,
 				929053DC1F42867200F36733 /* Propeller.hpp */,
+				924229E11F67719600BCFDC4 /* Robot.cpp */,
+				924229E21F67719600BCFDC4 /* Robot.hpp */,
 			);
 			name = Assignment2;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				9260AD001F31B00B003F0C29 /* Colour.cpp in Sources */,
 				9260ACFD1F31B00B003F0C29 /* Billboard.cpp in Sources */,
 				9260AD0F1F31B00B003F0C29 /* LookAtBehaviour.cpp in Sources */,
+				924229E31F67719600BCFDC4 /* Robot.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
